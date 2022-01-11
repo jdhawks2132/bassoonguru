@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-	skip_before_action :authenticate_user, only: %i[create show]
+	skip_before_action :authenticate_user, only: %i[create]
 
 	def show
 		if current_user
