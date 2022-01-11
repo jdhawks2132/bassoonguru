@@ -1,10 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Course.destroy_all
+Enrollment.destroy_all
+Comment.destroy_all
+Video.destroy_all
+
 puts 'Creating Users'
 
 User.create(
@@ -21,9 +20,24 @@ User.create(
 	email: 'jessie@example.com',
 )
 
+User.create(
+	username: 'kelly',
+	password: '123',
+	admin: false,
+	email: 'kelly@example.com',
+)
+
+User.create(
+	username: 'ashley',
+	password: '123',
+	admin: false,
+	email: 'ashley@example.com',
+)
+
 puts 'Creating Courses'
 
 Course.create(
+	id: 1,
 	name: 'Getting Started',
 	desc: 'Assembly, Reed Care, Breathing & Posture',
 	details:
@@ -31,6 +45,7 @@ Course.create(
 )
 
 Course.create(
+	id: 2,
 	name: 'Music Theory',
 	desc: 'Parts of the Staff, Lines and Spaces',
 	details:
@@ -38,6 +53,7 @@ Course.create(
 )
 
 Course.create(
+	id: 3,
 	name: 'First Sounds',
 	desc: 'Forming an Embouchure & Articulation',
 	details:
@@ -45,6 +61,7 @@ Course.create(
 )
 
 Course.create(
+	id: 4,
 	name: 'The Full Bassoon',
 	desc: 'Proper Posture & Hand Position',
 	details:
@@ -52,6 +69,7 @@ Course.create(
 )
 
 Course.create(
+	id: 5,
 	name: 'Warm Ups',
 	desc: 'Creating a Daily Routine',
 	details:
@@ -59,6 +77,7 @@ Course.create(
 )
 
 Course.create(
+	id: 6,
 	name: 'First Song!',
 	desc: 'Hot Cross Buns!',
 	details:
@@ -68,5 +87,140 @@ Course.create(
 puts 'Creating Enrollments'
 
 Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
+Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
+Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
+Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
+Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
+Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
 
 puts 'Creating Comments'
+
+Comment.create(
+	comment: 'Great lesson!',
+	user_id: User.all.sample.id,
+	course_id: Course.all.sample.id,
+)
+
+Comment.create(
+	comment: 'I am a little confused...',
+	user_id: User.all.sample.id,
+	course_id: Course.all.sample.id,
+)
+
+Comment.create(
+	comment: 'I did it!',
+	user_id: User.all.sample.id,
+	course_id: Course.all.sample.id,
+)
+
+Comment.create(
+	comment: 'My bassoon sounds like Chewbaca',
+	user_id: User.all.sample.id,
+	course_id: Course.all.sample.id,
+)
+
+Comment.create(
+	comment: 'Do you have to soak your reed?',
+	user_id: User.all.sample.id,
+	course_id: Course.all.sample.id,
+)
+
+Comment.create(
+	comment: 'My reed is too hard...',
+	user_id: User.all.sample.id,
+	course_id: Course.all.sample.id,
+)
+
+Comment.create(
+	comment: 'How can I get more practice at this?',
+	user_id: User.all.sample.id,
+	course_id: Course.all.sample.id,
+)
+
+puts 'Creating Videos'
+
+Video.create(
+	title: 'Parts of the Instrument',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 1,
+)
+
+Video.create(
+	title: 'Instrument Assembly',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 1,
+)
+
+Video.create(
+	title: 'Reed Care',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 1,
+)
+
+Video.create(
+	title: 'Posture & Breathing',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 1,
+)
+
+Video.create(
+	title: 'Parts of the Staff',
+	url: 'https://youtu.be/0GGTzs1nXjo',
+	course_id: 2,
+)
+
+Video.create(
+	title: 'Reading Bass Clef',
+	url: 'https://youtu.be/w44JkXcQ5xk',
+	course_id: 2,
+)
+
+Video.create(
+	title: 'First Sounds',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 3,
+)
+
+Video.create(
+	title: 'Articulation',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 3,
+)
+
+Video.create(
+	title: 'Articulation',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 3,
+)
+
+Video.create(
+	title: 'The Full Bassoon!',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 4,
+)
+
+Video.create(
+	title: 'Hand Position',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 4,
+)
+
+Video.create(
+	title: 'Hand Position',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 4,
+)
+
+Video.create(
+	title: 'Daily Warm Up',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 5,
+)
+
+Video.create(
+	title: 'First Song: Hot Cross Buns',
+	url: 'https://youtu.be/XvXmua_lsOo',
+	course_id: 6,
+)
+
+puts 'Seeding Complete!✅'

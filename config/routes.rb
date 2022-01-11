@@ -3,11 +3,12 @@ Rails.application.routes.draw do
 	get '/hello', to: 'application#hello_world'
 
 	namespace :api do
+		resources :enrollments, except: [:update]
 		resources :comments
 		resources :videos, only: %i[index show]
 		resources :courses, only: %i[index show]
 		post '/signup', to: 'users#create'
-		get '/me', to: 'users#me'
+		get '/me', to: 'users#show'
 		post '/login', to: 'sessions#create'
 		delete '/logout', to: 'sessions#destroy'
 	end

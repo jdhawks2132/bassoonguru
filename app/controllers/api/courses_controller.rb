@@ -1,4 +1,5 @@
 class Api::CoursesController < ApplicationController
+	skip_before_action :authenticate_user
 	before_action :set_course, only: [:show]
 
 	def index
@@ -6,7 +7,7 @@ class Api::CoursesController < ApplicationController
 	end
 
 	def show
-		render json: @camper, status: :ok
+		render json: @course, serializer: CourseWithDetailsSerializer, status: :ok
 	end
 
 	private

@@ -1,4 +1,5 @@
 class Api::CommentsController < ApplicationController
+  skip_before_action :authenticate_user
 	before_action :set_comment, only: %i[show update destroy]
 
 	def index
@@ -14,9 +15,12 @@ class Api::CommentsController < ApplicationController
 		render json: comment, status: :created
 	end
 
+	def update
+		render json: @comment.update!(comment_params), status: :ok
+	end
+
 	def destroy
-		comment = Comment.find(params[:id])
-		comment.destroy
+		@comment.destroy
 		render json: {}, status: :ok
 	end
 
