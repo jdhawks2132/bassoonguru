@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_022551) do
+ActiveRecord::Schema.define(version: 2022_01_11_171314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 2022_01_11_022551) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "comment_id", null: false
+    t.index ["comment_id"], name: "index_responses_on_comment_id"
     t.index ["user_id"], name: "index_responses_on_user_id"
   end
 
@@ -83,6 +85,7 @@ ActiveRecord::Schema.define(version: 2022_01_11_022551) do
   add_foreign_key "enrollments", "users"
   add_foreign_key "response_to_comments", "comments"
   add_foreign_key "response_to_comments", "responses"
+  add_foreign_key "responses", "comments"
   add_foreign_key "responses", "users"
   add_foreign_key "videos", "courses"
 end

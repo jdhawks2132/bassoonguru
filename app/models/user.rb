@@ -3,6 +3,7 @@ class User < ApplicationRecord
 	has_many :enrollments
 	has_many :courses, through: :enrollments
   has_many :comments
+	has_many :responses
 
 	validates :username, presence: true, uniqueness: true
 	validates :email,
