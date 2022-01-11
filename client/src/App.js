@@ -1,19 +1,15 @@
-import { useState, useEffect } from "react";
+import { useCoursesQuery, useCourseQuery } from './store/guruAPI';
 
 function App() {
-  const [count, setCount] = useState(0);
+	const { data: courses } = useCoursesQuery();
+	const { data: course } = useCourseQuery(1);
 
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
-
-  return (
-    <div className="App">
-      <h1>Page Count: {count}</h1>
-    </div>
-  );
+	console.log(courses, course);
+	return (
+		<div className='App'>
+			<h1>Page Count:{courses.length}</h1>
+		</div>
+	);
 }
 
 export default App;
