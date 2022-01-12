@@ -49,6 +49,51 @@ ul {
 .btn:hover {
 	box-shadow: 0 0 5px #e710ad;
 }
+.btn-blue {
+	background: #324bd3;
+	padding: 8px 12px;
+	border-radius: 20px;
+	color: white;
+	cursor: pointer;
+	font-size: 1em;
+	border: none;
+	width: 110px;
+}
+
+.btn-blue:hover {
+	box-shadow: 0 0 5px #324bd3;
+}
+
+.btn-pink {
+	background: #e710ad;
+	padding: 8px 12px;
+	border-radius: 20px;
+	color: white;
+	cursor: pointer;
+	font-size: 1em;
+	border: none;
+	width: 110px;
+}
+
+.btn-pink:hover {
+	box-shadow: 0 0 5px #e710ad;
+}
+
+.btn-prpl {
+	background: #932bbe;
+	padding: 8px 12px;
+	border-radius: 20px;
+	color: white;
+	cursor: pointer;
+	font-size: 1em;
+	border: none;
+	margin-left: 10px;
+	width: 110px;
+}
+
+.btn-prpl:hover {
+	box-shadow: 0 0 5px #932bbe;
+}
 
 /* forms */
 label {

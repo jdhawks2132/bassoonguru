@@ -2,10 +2,10 @@ import CourseDetail from './CourseDetail';
 
 import './Course.css';
 
-const Course = ({ user }) => {
+const Course = () => {
 	return (
 		<div className='course-details'>
-			<CourseDetail user={user} />
+			<CourseDetail />
 		</div>
 	);
 };

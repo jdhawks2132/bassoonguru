@@ -13,6 +13,7 @@ import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Dashboard from './pages/dashboard/Dashboard';
 import MyDashboard from './pages/dashboard/MyDashboard';
+import Course from './pages/detail/Course';
 
 function App() {
 	const { data: courses } = useCoursesQuery();
@@ -31,7 +32,14 @@ function App() {
 							{!currentUser && <Redirect to='/login' />}
 							{currentUser && <Dashboard />}
 						</Route>
-						<Route path='/my-lessons'>{currentUser && <MyDashboard />}</Route>
+						<Route path='/my-lessons'>
+							{currentUser && <MyDashboard />}
+							{!currentUser && <Redirect to='/login' />}
+						</Route>
+						<Route path='/courses/:id'>
+							{currentUser && <Course />}
+							{!currentUser && <Redirect to='/login' />}
+						</Route>
 						<Route path='/login'>
 							{!currentUser && <Login />}
 							{currentUser && <Redirect to='/lessons' />}
