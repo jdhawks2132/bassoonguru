@@ -20,18 +20,18 @@ export default function Login() {
 				<h2>login</h2>
 
 				<label>
-					<span>username</span>
 					<input
 						required
+						placeholder='username'
 						type='text'
 						onChange={(e) => setUserName(e.target.value)}
 						value={userName}
 					/>
 				</label>
 				<label>
-					<span>password:</span>
 					<input
 						required
+						placeholder='password'
 						type='password'
 						onChange={(e) => setPassword(e.target.value)}
 						value={password}

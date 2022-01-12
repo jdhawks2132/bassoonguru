@@ -13,12 +13,15 @@
 	justify-content: flex-end;
 }
 .navbar .logo {
-	font-weight: bold;
 	color: var(--heading-color);
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 	display: flex;
 	align-items: center;
 	margin-right: auto;
+}
+
+.navbar .logo h1 {
+	font-weight: 200;
 }
 .navbar .logo img {
 	margin-right: 10px;

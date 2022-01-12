@@ -5,8 +5,24 @@
 .auth-form {
 	max-width: 360px;
 	margin: 60px auto;
-	padding: 40px;
+	padding: 50px;
+	background: none;
+}
+
+.auth-form h2 {
+	text-align: center;
+}
+
+.auth-form input {
+	padding: 10px;
+	border-radius: 20px;
 	border: 1px solid #ddd;
 	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
-	background: #fff;
+}
+
+.auth-form input::placeholder {
+	font-family: Poppins;
+	font-weight: 200;
+	opacity: 50%;
+	padding: 4px;
 }
