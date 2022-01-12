@@ -1,6 +1,6 @@
 class Api::EnrollmentsController < ApplicationController
-  skip_before_action :authenticate_user
-	before_action :set_enrollment, only: %i[show delete]
+	skip_before_action :authenticate_user
+	before_action :set_enrollment, only: %i[show destroy]
 
 	def index
 		render json: Enrollment.all, status: :ok

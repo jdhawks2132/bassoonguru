@@ -42,6 +42,27 @@ export const guruApi = createApi({
 			}),
 			invalidatesTags: ['User'],
 		}),
+		enrollments: builder.query({
+			query: () => ({
+				url: '/enrollments',
+				providesTags: ['User', 'Course'],
+			}),
+		}),
+		addEnrollment: builder.mutation({
+			query: (enrollment) => ({
+				url: '/enrollments',
+				method: 'POST',
+				body: enrollment,
+			}),
+			invalidatesTags: ['Course', 'User'],
+		}),
+		deleteEnrollment: builder.mutation({
+			query: (id) => ({
+				url: `/enrollments/${id}`,
+				method: 'DELETE',
+			}),
+			invalidatesTags: ['Course', 'User'],
+		}),
 	}),
 });
 
@@ -52,4 +73,6 @@ export const {
 	useSignupMutation,
 	useLoginMutation,
 	useLogoutMutation,
+	useAddEnrollmentMutation,
+	useDeleteEnrollmentMutation,
 } = guruApi;
