@@ -37,7 +37,7 @@ export default function Login() {
 						value={password}
 					/>
 				</label>
-				<button className='btn'>Log in</button>
+				<button className='btn'>LOGIN</button>
 				{error && <p className='error'>{JSON.stringify(error.data)}</p>}
 			</form>
 		</div>

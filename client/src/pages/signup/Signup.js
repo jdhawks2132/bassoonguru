@@ -46,7 +46,7 @@ export default function Signup() {
 						value={userName}
 					/>
 				</label>
-				<button className='btn'>Sign up</button>
+				<button className='btn'>SIGNUP</button>
 				{error && <p className='error'>{JSON.stringify(error.data)}</p>}
 			</form>
 		</div>
