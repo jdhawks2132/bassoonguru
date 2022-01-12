@@ -1,0 +1,47 @@
+.curriculum-container {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 1fr 0.5fr 1fr;
+	grid-template-areas:
+		'card video video '
+		'form video video '
+		'comments links links ';
+	height: 700px;
+}
+
+.course-card {
+	display: grid;
+	grid-area: card;
+	width: 100%;
+	background-color: red;
+}
+
+.comment-form {
+	display: grid;
+	grid-area: form;
+	width: 100%;
+	background-color: purple;
+}
+
+.comments {
+	display: grid;
+
+	grid-area: comments;
+	width: 100%;
+	background-color: yellow;
+}
+
+.video {
+	display: grid;
+	justify-content: center;
+	grid-area: video;
+	align-content: center;
+	width: 100%;
+}
+
+.video-links {
+	display: grid;
+	grid-area: links;
+	width: 100%;
+	background-color: green;
+}

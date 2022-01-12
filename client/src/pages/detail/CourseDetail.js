@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import {
 	useCourseQuery,
 	useCurrentUserQuery,
@@ -58,7 +58,11 @@ const CourseDetail = () => {
 							remove
 						</button>
 					)}
-					{check && <button className='btn-prpl'>curriculum</button>}
+					{check && (
+						<Link to={`/curriculum/${course.id}`}>
+							<button className='btn-prpl'>curriculum</button>
+						</Link>
+					)}
 				</>
 			)}
 		</div>

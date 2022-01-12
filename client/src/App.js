@@ -14,6 +14,7 @@ import Signup from './pages/signup/Signup';
 import Dashboard from './pages/dashboard/Dashboard';
 import MyDashboard from './pages/dashboard/MyDashboard';
 import Course from './pages/detail/Course';
+import Curriculum from './pages/curriculum/Curriculum';
 
 function App() {
 	const { data: courses } = useCoursesQuery();
@@ -38,6 +39,10 @@ function App() {
 						</Route>
 						<Route path='/courses/:id'>
 							{currentUser && <Course />}
+							{!currentUser && <Redirect to='/login' />}
+						</Route>
+						<Route path='/curriculum/:id'>
+							{currentUser && <Curriculum />}
 							{!currentUser && <Redirect to='/login' />}
 						</Route>
 						<Route path='/login'>
