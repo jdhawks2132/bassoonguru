@@ -1,30 +1,47 @@
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import {
 	useCoursesQuery,
 	useCourseQuery,
-	useLoginMutation,
 	useCurrentUserQuery,
-	useLogoutMutation,
 } from './store/guruAPI';
 
-import { useEffect } from 'react';
+//styles
+import './App.css';
+
+import Navbar from './components/Navbar';
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
+import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
 	const { data: courses } = useCoursesQuery();
 	const { data: course } = useCourseQuery(1);
-	const [login, { data: loginData }] = useLoginMutation();
 	const { data: currentUser } = useCurrentUserQuery();
 
-	useEffect(() => {
-		login({
-			username: 'josh',
-			password: '123',
-		});
-	}, []);
-
-	console.log(courses, course, loginData, currentUser);
+	console.log(courses, course, currentUser);
 
 	return (
-		<div className='App'>{courses && <h1>Page Count:{courses.length}</h1>}</div>
+		<div className='App'>
+			<BrowserRouter>
+				<div className='container'>
+					<Navbar />
+					<Switch>
+						<Route path='/lessons'>
+							{!currentUser && <Redirect to='/login' />}
+							{currentUser && <Dashboard />}
+						</Route>
+						<Route path='/login'>
+							{!currentUser && <Login />}
+							{currentUser && <Redirect to='/lessons' />}
+						</Route>
+						<Route path='/signup'>
+							{!currentUser && <Signup />}
+							{currentUser && <Redirect to='/lessons' />}
+						</Route>
+					</Switch>
+				</div>
+			</BrowserRouter>
+		</div>
 	);
 }
 

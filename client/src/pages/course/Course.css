@@ -1,0 +1,25 @@
+.course-details {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: start;
+	grid-gap: 60px;
+}
+
+.course-detail {
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 4px;
+	text-align: center;
+}
+
+.review-btn {
+	background: rgb(108, 32, 232);
+	padding: 4px;
+	border-radius: 6px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 0.75em;
+	border: 1px solid var(--primary-color);
+	margin-left: 10px;
+	margin-top: 5px;
+}
