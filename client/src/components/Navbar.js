@@ -10,6 +10,7 @@ export default function Navbar() {
 	const { data: currentUser } = useCurrentUserQuery();
 	const handleLogout = () => logout().then(() => window.location.reload());
 
+	console.log(currentUser);
 	return (
 		<nav className='navbar'>
 			<ul>
@@ -31,6 +32,7 @@ export default function Navbar() {
 
 				{currentUser && (
 					<>
+						<li>{currentUser.admin && <Link to='/login'>Admin</Link>}</li>
 						<li>
 							<Link to='/login'>My Lessons</Link>
 						</li>
