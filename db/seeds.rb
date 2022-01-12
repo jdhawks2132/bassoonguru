@@ -86,12 +86,12 @@ Course.create(
 
 puts 'Creating Enrollments'
 
-Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
-Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
-Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
-Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
-Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
-Enrollment.create(user_id: User.all.sample.id, course_id: Course.all.sample.id)
+Enrollment.create(user_id: User.all.sample.id, course_id: 1)
+Enrollment.create(user_id: User.all.sample.id, course_id: 2)
+Enrollment.create(user_id: User.all.sample.id, course_id: 3)
+Enrollment.create(user_id: User.all.sample.id, course_id: 4)
+Enrollment.create(user_id: User.all.sample.id, course_id: 5)
+Enrollment.create(user_id: User.all.sample.id, course_id: 6)
 
 puts 'Creating Comments'
 

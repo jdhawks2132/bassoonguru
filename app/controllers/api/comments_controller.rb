@@ -1,13 +1,13 @@
 class Api::CommentsController < ApplicationController
-  skip_before_action :authenticate_user
+	skip_before_action :authenticate_user
 	before_action :set_comment, only: %i[show update destroy]
 
 	def index
-		render json: Comment.all, status: :ok
+		render json: Comment.all, status: :ok, includes: :repsonses
 	end
 
 	def show
-		render json: @comment, status: :ok
+		render json: @comment, status: :ok, includes: :responses
 	end
 
 	def create

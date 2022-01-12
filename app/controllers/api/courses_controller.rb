@@ -7,7 +7,9 @@ class Api::CoursesController < ApplicationController
 	end
 
 	def show
-		render json: @course, serializer: CourseWithDetailsSerializer, status: :ok
+		render json: @course,
+		       include: %w[videos comments comments.responses],
+		       serializer: CourseWithDetailsSerializer
 	end
 
 	private

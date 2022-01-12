@@ -34,7 +34,7 @@ export default function Navbar() {
 					<>
 						<li>{currentUser.admin && <Link to='/login'>Admin</Link>}</li>
 						<li>
-							<Link to='/login'>My Lessons</Link>
+							<Link to='/my-lessons'>My Lessons</Link>
 						</li>
 						<li>
 							<Link to='/lessons'>Lessons</Link>
