@@ -1,19 +1,21 @@
-import React from 'react';
+import { useState } from 'react';
 import ReactPlayer from 'react-player';
 import { useParams } from 'react-router-dom';
 import CommentForm from '../../components/CommentForm';
 import CommentList from '../../components/CommentList';
 import CurriculumCard from '../../components/CurriculumCard';
+import VideoList from '../../components/VideoList';
 import { useCourseQuery, useCurrentUserQuery } from '../../store/guruAPI';
 
 import './Curriculum.css';
 
 function Curriculum() {
+	const [currentVideo, setCurrentVideo] = useState(null);
 	const { id } = useParams();
 	const { data: course } = useCourseQuery(id);
 	const { data: user } = useCurrentUserQuery();
 
-	console.log(course);
+	console.log(currentVideo);
 
 	return (
 		<div className='curriculum-container'>
@@ -34,7 +36,16 @@ function Curriculum() {
 						<ReactPlayer id='embed-video' url={course.videos[0].url} />
 					</div>
 
-					<div className='video-links'>Video Links</div>
+					<div className='video-links'>
+						<h2>Video Links</h2>
+						{course.videos.map((video) => (
+							<VideoList
+								video={video}
+								key={video.id}
+								setCurrentVideo={setCurrentVideo}
+							/>
+						))}
+					</div>
 				</>
 			)}
 		</div>
