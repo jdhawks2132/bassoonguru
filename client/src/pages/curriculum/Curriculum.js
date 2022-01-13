@@ -17,7 +17,7 @@ function Curriculum() {
 
 	const handleVideo = (url) => {
 		console.log(currentVideo);
-		setCurrentVideo((url) => url);
+		setCurrentVideo(url);
 		console.log(currentVideo);
 	};
 
