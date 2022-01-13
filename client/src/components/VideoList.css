@@ -1,0 +1,18 @@
+.video-list {
+	display: flex;
+	padding: 4px;
+	margin: 5px;
+	height: 23px;
+	width: 500px;
+	align-items: center;
+	background-color: pink;
+}
+
+.video-list p {
+	display: flex;
+	margin-right: 40px;
+}
+
+.video-list button {
+	align-items: center;
+}

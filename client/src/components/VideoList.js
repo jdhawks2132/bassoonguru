@@ -1,10 +1,14 @@
 import React from 'react';
 
-function VideoList({ video, setCurrentVideo }) {
+import './VideoList.css';
+
+function VideoList({ video, handleVideo }) {
 	return (
 		<div className='video-list'>
 			<p>{video.title}</p>{' '}
-			<button onclick={() => setCurrentVideo(video.url)}>Play</button>
+			<button className='btn-mini-blue' onclick={handleVideo(video.url)}>
+				Play
+			</button>
 		</div>
 	);
 }

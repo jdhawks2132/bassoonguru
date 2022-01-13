@@ -24,8 +24,9 @@
 	display: grid;
 	text-align: center;
 	grid-area: comments;
-	width: 100%;
 	background-color: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
 	padding: 10px;
 	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
 }
@@ -50,5 +51,6 @@
 	display: grid;
 	grid-area: links;
 	width: 100%;
-	background-color: green;
+	text-align: center;
+	justify-content: center;
 }

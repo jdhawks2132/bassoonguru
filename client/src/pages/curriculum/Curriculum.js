@@ -15,7 +15,13 @@ function Curriculum() {
 	const { data: course } = useCourseQuery(id);
 	const { data: user } = useCurrentUserQuery();
 
-	console.log(currentVideo);
+	const handleVideo = (url) => {
+		console.log(currentVideo);
+		setCurrentVideo((url) => url);
+		console.log(currentVideo);
+	};
+
+	const updateVideo = (url) => {};
 
 	return (
 		<div className='curriculum-container'>
@@ -33,7 +39,10 @@ function Curriculum() {
 						))}
 					</div>
 					<div className='video'>
-						<ReactPlayer id='embed-video' url={course.videos[0].url} />
+						<ReactPlayer
+							id='embed-video'
+							url={currentVideo ? currentVideo : course.videos[0].url}
+						/>
 					</div>
 
 					<div className='video-links'>
@@ -42,7 +51,7 @@ function Curriculum() {
 							<VideoList
 								video={video}
 								key={video.id}
-								setCurrentVideo={setCurrentVideo}
+								handleVideo={handleVideo}
 							/>
 						))}
 					</div>
