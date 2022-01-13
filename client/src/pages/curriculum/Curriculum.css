@@ -13,22 +13,29 @@
 	display: grid;
 	grid-area: card;
 	width: 100%;
-	background-color: red;
 }
 
 .comment-form {
-	display: grid;
 	grid-area: form;
 	width: 100%;
-	background-color: purple;
 }
 
 .comments {
 	display: grid;
-
+	text-align: center;
 	grid-area: comments;
 	width: 100%;
-	background-color: yellow;
+	background-color: #ffffff;
+	padding: 10px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+.comments h3 {
+	font-weight: lighter;
+}
+
+.comments p {
+	font-weight: lighter;
 }
 
 .video {

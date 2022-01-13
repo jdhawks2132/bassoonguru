@@ -1,0 +1,17 @@
+.curriculum-card {
+	margin-top: 40px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-gap: 20px;
+	padding: 10px;
+	text-align: center;
+	height: 50px;
+}
+
+.curriculum-card h2 {
+	color: white;
+	padding: 30px;
+	background-color: #324bd3;
+	border-radius: 10px;
+}

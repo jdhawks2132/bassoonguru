@@ -63,6 +63,21 @@ export const guruApi = createApi({
 			}),
 			invalidatesTags: ['Course', 'User'],
 		}),
+		addComment: builder.mutation({
+			query: (comment) => ({
+				url: '/comments',
+				method: 'POST',
+				body: comment,
+			}),
+			invalidatesTags: ['Course', 'User', 'Comment'],
+		}),
+		deleteComment: builder.mutation({
+			query: (id) => ({
+				url: `/comments/${id}`,
+				method: 'DELETE',
+			}),
+			invalidatesTags: ['Course', 'User', 'Comment'],
+		}),
 	}),
 });
 
@@ -75,4 +90,6 @@ export const {
 	useLogoutMutation,
 	useAddEnrollmentMutation,
 	useDeleteEnrollmentMutation,
+	useAddCommentMutation,
+	useDeleteCommentMutation,
 } = guruApi;

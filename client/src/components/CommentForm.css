@@ -1,0 +1,20 @@
+.auth-form-mini {
+	max-width: 360px;
+	margin: 60px auto;
+	padding: 10px;
+	background: none;
+}
+
+.auth-form-mini input {
+	padding: 4px;
+	border-radius: 20px;
+	border: 1px solid #ddd;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+.auth-form-mini input::placeholder {
+	font-family: Poppins;
+	font-weight: 200;
+	opacity: 50%;
+	padding: 4px;
+}

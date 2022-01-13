@@ -60,6 +60,27 @@ ul {
 	width: 110px;
 }
 
+.btn-mini-blue {
+	background: #324bd3;
+	padding: 4px 6px;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+	font-size: 0.75em;
+	border: none;
+	width: 70px;
+}
+.btn-mini-pink {
+	background: #e710ad;
+	padding: 4px 6px;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+	font-size: 0.75em;
+	border: none;
+	width: 70px;
+}
+
 .btn-blue:hover {
 	box-shadow: 0 0 5px #324bd3;
 }
