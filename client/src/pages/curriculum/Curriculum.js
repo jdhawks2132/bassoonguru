@@ -21,8 +21,6 @@ function Curriculum() {
 		console.log(currentVideo);
 	};
 
-	const updateVideo = (url) => {};
-
 	return (
 		<div className='curriculum-container'>
 			{course && user && (

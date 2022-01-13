@@ -1,5 +1,4 @@
 class Api::CoursesController < ApplicationController
-	skip_before_action :authenticate_user
 	before_action :set_course, only: [:show]
 
 	def index

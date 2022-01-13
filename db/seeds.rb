@@ -188,12 +188,6 @@ Video.create(
 )
 
 Video.create(
-	title: 'Articulation',
-	url: 'https://youtu.be/XvXmua_lsOo',
-	course_id: 3,
-)
-
-Video.create(
 	title: 'The Full Bassoon!',
 	url: 'https://youtu.be/XvXmua_lsOo',
 	course_id: 4,
