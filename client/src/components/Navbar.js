@@ -16,7 +16,9 @@ export default function Navbar() {
 			<ul>
 				<li className='logo'>
 					<img src={Logo} alt='logo' />
-					<h1>BassoonGuru</h1>
+					<Link to='/'>
+						<h1>BassoonGuru</h1>
+					</Link>
 				</li>
 
 				{!currentUser && (

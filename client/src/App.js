@@ -15,13 +15,12 @@ import Dashboard from './pages/dashboard/Dashboard';
 import MyDashboard from './pages/dashboard/MyDashboard';
 import Course from './pages/detail/Course';
 import Curriculum from './pages/curriculum/Curriculum';
+import Home from './pages/home/Home';
 
 function App() {
-	const { data: courses } = useCoursesQuery();
-	const { data: course } = useCourseQuery(1);
 	const { data: currentUser } = useCurrentUserQuery();
 
-	console.log(courses, course, currentUser);
+	console.log(currentUser);
 
 	return (
 		<div className='App'>
@@ -29,6 +28,10 @@ function App() {
 				<div className='container'>
 					<Navbar />
 					<Switch>
+						<Route exact path='/'>
+							<Home />
+							{currentUser && <Redirect to='/lessons' />}
+						</Route>
 						<Route path='/lessons'>
 							{!currentUser && <Redirect to='/login' />}
 							{currentUser && <Dashboard />}
