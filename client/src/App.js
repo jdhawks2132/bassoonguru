@@ -1,9 +1,5 @@
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import {
-	useCoursesQuery,
-	useCourseQuery,
-	useCurrentUserQuery,
-} from './store/guruAPI';
+import { useCurrentUserQuery } from './store/guruAPI';
 
 //styles
 import './App.css';
