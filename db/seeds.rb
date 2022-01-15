@@ -3,6 +3,8 @@ Course.destroy_all
 Enrollment.destroy_all
 Comment.destroy_all
 Video.destroy_all
+Extra.destroy_all
+ExtraItem.destroy_all
 
 puts 'Creating Users'
 
@@ -86,6 +88,32 @@ Course.create(
 	desc: 'Hot Cross Buns!',
 	details:
 		'This lesson will introduce our first song - Hot Cross Buns! It only uses the notes and rhythms we play in our warm up so it is the perfect first song.',
+)
+
+puts 'Creating Extra Resources...'
+
+Extra.create(
+	id: 1,
+	name: 'Private Teachers',
+	desc: 'Names of Online Teachers',
+	details:
+		'Having a private tutor can be a huge help when you are first learning a new skill! Here is a list of teachers who support online learning.',
+)
+
+Extra.create(
+	id: 2,
+	name: 'Reed Sources',
+	desc: 'Websites for Quality Reeds',
+	details:
+		'The reed is arguably the most important part of playing the bassoon. These companies and reed makers make quality products that help you make your best sound.',
+)
+
+Extra.create(
+	id: 3,
+	name: 'Music Theory Games',
+	desc: 'Make Practicing Theory Fun!',
+	details:
+		'Here are a list of resources that make learning music theory fun and exciting',
 )
 
 puts 'Creating Enrollments'
@@ -214,5 +242,23 @@ Video.create(
 	url: 'https://youtu.be/YD2dSngkfec',
 	course_id: 6,
 )
+
+puts 'Creating Extra Items...'
+
+ExtraItem.create(extra_id: 1, detail: 'Ryan Morris')
+
+ExtraItem.create(extra_id: 1, detail: 'Robyn Watson')
+
+ExtraItem.create(extra_id: 1, detail: 'Kristen Goguen')
+
+ExtraItem.create(extra_id: 2, detail: 'www.bocalmajoritystore.com')
+
+ExtraItem.create(extra_id: 2, detail: 'www.mmimports.com')
+
+ExtraItem.create(extra_id: 2, detail: 'www.singindog.com')
+
+ExtraItem.create(extra_id: 3, detail: 'www.musictheory.net')
+
+ExtraItem.create(extra_id: 3, detail: 'Staff Wars for iPhone/ iPad')
 
 puts 'Seeding Complete!✅'

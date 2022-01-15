@@ -1,6 +1,6 @@
-class CreateBassoonResources < ActiveRecord::Migration[6.1]
+class CreateExtras < ActiveRecord::Migration[6.1]
   def change
-    create_table :bassoon_resources do |t|
+    create_table :extras do |t|
       t.string :name
       t.string :desc
       t.string :details
