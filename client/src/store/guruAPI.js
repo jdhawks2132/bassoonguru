@@ -5,7 +5,7 @@ export const guruApi = createApi({
 	baseQuery: fetchBaseQuery({
 		baseUrl: '/api',
 	}),
-	tagTypes: ['User', 'Course', 'Comment'],
+	tagTypes: ['User', 'Course', 'Comment', 'Resource'],
 	endpoints: (builder) => ({
 		courses: builder.query({
 			query: () => '/courses',
@@ -43,10 +43,8 @@ export const guruApi = createApi({
 			invalidatesTags: ['User'],
 		}),
 		enrollments: builder.query({
-			query: () => ({
-				url: '/enrollments',
-				providesTags: ['User', 'Course'],
-			}),
+			query: () => '/enrollments',
+			providesTags: ['User', 'Course'],
 		}),
 		addEnrollment: builder.mutation({
 			query: (enrollment) => ({
@@ -64,10 +62,8 @@ export const guruApi = createApi({
 			invalidatesTags: ['Course', 'User'],
 		}),
 		comments: builder.query({
-			query: () => ({
-				url: '/comments',
-				providesTags: ['Comment'],
-			}),
+			query: () => '/comments',
+			providesTags: ['Comment'],
 		}),
 		addComment: builder.mutation({
 			query: (comment) => ({
@@ -84,6 +80,14 @@ export const guruApi = createApi({
 			}),
 			invalidatesTags: ['Comment'],
 		}),
+		extras: builder.query({
+			query: () => '/extras',
+			providesTags: ['Resource'],
+		}),
+		extra: builder.query({
+			query: (id) => `/extras/${id}`,
+			providesTags: ['Resource'],
+		}),
 	}),
 });
 
@@ -99,4 +103,6 @@ export const {
 	useCommentsQuery,
 	useAddCommentMutation,
 	useDeleteCommentMutation,
+	useExtrasQuery,
+	useExtraQuery,
 } = guruApi;

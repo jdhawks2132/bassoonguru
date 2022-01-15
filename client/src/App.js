@@ -13,6 +13,8 @@ import Course from './pages/detail/Course';
 import Curriculum from './pages/curriculum/Curriculum';
 import Home from './pages/home/Home';
 import Admin from './pages/admin/Admin';
+import ResourceDashboard from './pages/dashboard/ResourceDashboard';
+import Resource from './pages/detail/Resource';
 
 function App() {
 	const { data: currentUser } = useCurrentUserQuery();
@@ -33,6 +35,14 @@ function App() {
 						</Route>
 						<Route path='/lessons'>
 							{currentUser && <Dashboard />}
+							{!currentUser && <Redirect to='/login' />}
+						</Route>
+						<Route path='/extras'>
+							{currentUser && <ResourceDashboard />}
+							{!currentUser && <Redirect to='/login' />}
+						</Route>
+						<Route exact path='/resources/:id'>
+							{currentUser && <Resource />}
 							{!currentUser && <Redirect to='/login' />}
 						</Route>
 						<Route path='/my-lessons'>

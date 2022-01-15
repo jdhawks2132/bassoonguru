@@ -42,7 +42,7 @@ export default function Navbar() {
 							<Link to='/lessons'>Lessons</Link>
 						</li>
 						<li>
-							<Link to='/signup'>Resources</Link>
+							<Link to='/extras'>Resources</Link>
 						</li>
 						<li>
 							<button className='btn' onClick={handleLogout}>

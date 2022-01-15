@@ -1,5 +1,5 @@
 class Api::ExtrasController < ApplicationController
-	before_action :set_comment, only: :show
+	before_action :set_extra, only: :show
 
 	def index
 		render json: Extra.all, status: :ok
@@ -11,7 +11,7 @@ class Api::ExtrasController < ApplicationController
 
 	private
 
-	def set_extras
+	def set_extra
 		@extra = Extra.find(params[:id])
 	end
 end
