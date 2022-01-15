@@ -22,12 +22,15 @@
 
 .comments {
 	display: grid;
+	justify-content: center;
 	text-align: center;
 	grid-area: comments;
 	background-color: #ffffff;
 	border: 1px solid #ddd;
 	border-radius: 8px;
 	padding: 10px;
+	height: 300px;
+	overflow: auto;
 	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
 }
 

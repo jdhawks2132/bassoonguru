@@ -32,9 +32,13 @@ function Curriculum() {
 						<CommentForm course={course} user={user} />
 					</div>
 					<div className='comments'>
-						{course.comments.map((comment) => (
-							<CommentList user={user} comment={comment} key={comment.id} />
-						))}
+						<div className='comment-list'>
+							<ul>
+								{course.comments.map((comment) => (
+									<CommentList user={user} comment={comment} key={comment.id} />
+								))}
+							</ul>
+						</div>
 					</div>
 					<div className='video'>
 						<ReactPlayer

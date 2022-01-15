@@ -12,11 +12,10 @@ import MyDashboard from './pages/dashboard/MyDashboard';
 import Course from './pages/detail/Course';
 import Curriculum from './pages/curriculum/Curriculum';
 import Home from './pages/home/Home';
+import Admin from './pages/admin/Admin';
 
 function App() {
 	const { data: currentUser } = useCurrentUserQuery();
-
-	console.log(currentUser);
 
 	return (
 		<div className='App'>
@@ -28,9 +27,13 @@ function App() {
 							<Home />
 							{currentUser && <Redirect to='/lessons' />}
 						</Route>
-						<Route path='/lessons'>
+						<Route path='/admin'>
+							{currentUser?.admin && <Admin />}
 							{!currentUser && <Redirect to='/login' />}
+						</Route>
+						<Route path='/lessons'>
 							{currentUser && <Dashboard />}
+							{!currentUser && <Redirect to='/login' />}
 						</Route>
 						<Route path='/my-lessons'>
 							{currentUser && <MyDashboard />}

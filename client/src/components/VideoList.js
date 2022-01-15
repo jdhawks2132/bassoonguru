@@ -1,15 +1,25 @@
-import React from 'react';
-
 import './VideoList.css';
 
 function VideoList({ video, handleVideo }) {
+	const handleClick = (e) => {
+		handleVideo(e.target.value);
+	};
+
 	return (
-		<div className='video-list'>
-			<p>{video.title}</p>{' '}
-			<button className='btn-mini-blue' onClick={() => handleVideo(video.url)}>
-				Play
-			</button>
-		</div>
+		<ul className='video-list'>
+			<li>
+				<p>{video.title}</p>
+			</li>
+			<li>
+				<button
+					className={'btn-mini-blue'}
+					onClick={handleClick}
+					value={video.url}
+				>
+					Play
+				</button>
+			</li>
+		</ul>
 	);
 }
 

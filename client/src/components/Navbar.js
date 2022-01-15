@@ -34,7 +34,7 @@ export default function Navbar() {
 
 				{currentUser && (
 					<>
-						<li>{currentUser.admin && <Link to='/login'>Admin</Link>}</li>
+						<li>{currentUser.admin && <Link to='/admin'>Admin</Link>}</li>
 						<li>
 							<Link to='/my-lessons'>My Lessons</Link>
 						</li>

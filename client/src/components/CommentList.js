@@ -1,5 +1,7 @@
 import { useDeleteCommentMutation } from '../store/guruAPI';
 
+import './CommentList.css';
+
 function CommentList({ comment, user }) {
 	const [deleteComment] = useDeleteCommentMutation();
 	const handleDelete = async () => {
@@ -7,17 +9,23 @@ function CommentList({ comment, user }) {
 	};
 
 	return (
-		<div className='comment-list'>
-			<p>{comment.comment}</p>
+		<ul>
+			<li>
+				<div className='comment-author'>
+					<p>@{user.username} :</p>
+				</div>
+				<div className='comment-content'>
+					<p>{comment.comment}</p>
+				</div>
+			</li>
 			{comment.user_id === user.id && (
 				<>
 					<button className='btn-mini-pink' onClick={handleDelete}>
 						Delete
 					</button>
-					<button className='btn-mini-blue'>Update</button>
 				</>
 			)}
-		</div>
+		</ul>
 	);
 }
 

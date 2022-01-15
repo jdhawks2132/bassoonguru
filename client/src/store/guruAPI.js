@@ -63,6 +63,12 @@ export const guruApi = createApi({
 			}),
 			invalidatesTags: ['Course', 'User'],
 		}),
+		comments: builder.query({
+			query: () => ({
+				url: '/comments',
+				providesTags: ['Course', 'User', 'Comment'],
+			}),
+		}),
 		addComment: builder.mutation({
 			query: (comment) => ({
 				url: '/comments',
@@ -90,6 +96,7 @@ export const {
 	useLogoutMutation,
 	useAddEnrollmentMutation,
 	useDeleteEnrollmentMutation,
+	useCommentsQuery,
 	useAddCommentMutation,
 	useDeleteCommentMutation,
 } = guruApi;
