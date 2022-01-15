@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_171314) do
+ActiveRecord::Schema.define(version: 2022_01_15_203139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bassoon_resources", force: :cascade do |t|
+    t.string "name"
+    t.string "desc"
+    t.string "details"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "bssn_resource_items", force: :cascade do |t|
+    t.bigint "bassoon_resource_id", null: false
+    t.text "detail"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bassoon_resource_id"], name: "index_bssn_resource_items_on_bassoon_resource_id"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "comment"
@@ -79,6 +95,7 @@ ActiveRecord::Schema.define(version: 2022_01_11_171314) do
     t.index ["course_id"], name: "index_videos_on_course_id"
   end
 
+  add_foreign_key "bssn_resource_items", "bassoon_resources"
   add_foreign_key "comments", "courses"
   add_foreign_key "comments", "users"
   add_foreign_key "enrollments", "courses"

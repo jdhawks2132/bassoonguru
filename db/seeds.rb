@@ -7,6 +7,7 @@ Video.destroy_all
 puts 'Creating Users'
 
 User.create(
+	id: 1,
 	username: 'josh',
 	password: '123',
 	admin: true,
@@ -14,6 +15,7 @@ User.create(
 )
 
 User.create(
+	id: 2,
 	username: 'jessie',
 	password: '123',
 	admin: false,
@@ -21,6 +23,7 @@ User.create(
 )
 
 User.create(
+	id: 3,
 	username: 'kelly',
 	password: '123',
 	admin: false,
@@ -28,6 +31,7 @@ User.create(
 )
 
 User.create(
+	id: 4,
 	username: 'ashley',
 	password: '123',
 	admin: false,
@@ -141,79 +145,73 @@ puts 'Creating Videos'
 
 Video.create(
 	title: 'Parts of the Instrument',
-	url: 'https://youtu.be/XvXmua_lsOo',
+	url: 'https://youtu.be/S4ih6K5ArUE',
 	course_id: 1,
 )
 
 Video.create(
 	title: 'Instrument Assembly',
-	url: 'https://youtu.be/XvXmua_lsOo',
+	url: 'https://youtu.be/WOM1ea5z13I',
 	course_id: 1,
 )
 
 Video.create(
 	title: 'Reed Care',
-	url: 'https://youtu.be/XvXmua_lsOo',
+	url: 'https://youtu.be/4gQQWeAjO9k',
 	course_id: 1,
 )
 
 Video.create(
 	title: 'Posture & Breathing',
-	url: 'https://youtu.be/XvXmua_lsOo',
+	url: 'https://youtu.be/aIuzWmxILkk',
 	course_id: 1,
 )
 
 Video.create(
 	title: 'Parts of the Staff',
-	url: 'https://youtu.be/0GGTzs1nXjo',
+	url: 'https://youtu.be/sc8oqCcj1O8',
 	course_id: 2,
 )
 
 Video.create(
 	title: 'Reading Bass Clef',
-	url: 'https://youtu.be/w44JkXcQ5xk',
+	url: 'https://youtu.be/-0-FolsjZp0',
 	course_id: 2,
 )
 
 Video.create(
 	title: 'First Sounds',
-	url: 'https://youtu.be/XvXmua_lsOo',
+	url: 'https://youtu.be/rL0JHGXV-_M',
 	course_id: 3,
 )
 
 Video.create(
 	title: 'Articulation',
-	url: 'https://youtu.be/XvXmua_lsOo',
+	url: 'https://youtu.be/qgrHpuW3J_w',
 	course_id: 3,
 )
 
 Video.create(
 	title: 'The Full Bassoon!',
-	url: 'https://youtu.be/XvXmua_lsOo',
+	url: 'https://youtu.be/3Gfe-rBpx3I',
 	course_id: 4,
 )
 
 Video.create(
 	title: 'Hand Position',
-	url: 'https://youtu.be/XvXmua_lsOo',
-	course_id: 4,
-)
-
-Video.create(
-	title: 'Hand Position',
-	url: 'https://youtu.be/XvXmua_lsOo',
+	url: 'https://youtu.be/xMZqAR9iphw',
 	course_id: 4,
 )
 
 Video.create(
 	title: 'Daily Warm Up',
-	url: 'https://youtu.be/XvXmua_lsOo',
+	url: 'https://youtu.be/NfSQJeQZbIo',
 	course_id: 5,
 )
 
 Video.create(
 	title: 'First Song: Hot Cross Buns',
-	url: 'https://youtu.be/XvXmua_lsOo',
+	url: 'https://youtu.be/YD2dSngkfec',
 	course_id: 6,
 )
 

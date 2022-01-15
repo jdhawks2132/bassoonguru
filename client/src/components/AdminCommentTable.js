@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDeleteCommentMutation } from '../store/guruAPI';
 
-
 function AdminCommentTable({ comment }) {
 	const [deleteComment] = useDeleteCommentMutation();
 	const [isUpdate, setIsUpdate] = useState('');

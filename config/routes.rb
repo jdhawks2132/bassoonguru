@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 	# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-	get '/hello', to: 'application#hello_world'
 
 	namespace :api do
 		resources :enrollments, except: [:update]
 		resources :comments
 		resources :videos, only: %i[index show]
 		resources :courses, only: %i[index show]
+		resources :bssn_resource_items, only: %i[index show]
+		resources :bassoon_resources, only: %i[index show]
 		post '/signup', to: 'users#create'
 		get '/me', to: 'users#show'
 		post '/login', to: 'sessions#create'

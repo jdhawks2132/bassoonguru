@@ -7,18 +7,19 @@ function CommentList({ comment, user }) {
 	const handleDelete = async () => {
 		await deleteComment(comment.id);
 	};
+	const isUserComment = comment.user_id === user.id;
 
 	return (
 		<ul>
 			<li>
 				<div className='comment-author'>
-					<p>@{user.username} :</p>
+					<p>@{isUserComment ? user.username : 'user'} :</p>
 				</div>
 				<div className='comment-content'>
 					<p>{comment.comment}</p>
 				</div>
 			</li>
-			{comment.user_id === user.id && (
+			{isUserComment && (
 				<>
 					<button className='btn-mini-pink' onClick={handleDelete}>
 						Delete

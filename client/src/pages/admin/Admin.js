@@ -7,7 +7,11 @@ import './Admin.css';
 function Admin() {
 	const { data: comments } = useCommentsQuery();
 
-	console.log(comments);
+
+	const commentsList = comments?.map((comment) => (
+		<AdminCommentTable key={comment.id} comment={comment} />
+	));
+
 	return (
 		<div className='admin'>
 			<div className='course-form'>
@@ -16,16 +20,15 @@ function Admin() {
 			<div className='user-table'>User Table</div>
 			<div className='comment-table'>
 				<table>
-					<tr>
-						<th>Course</th>
-						<th>User</th>
-						<th>Comment</th>
-					</tr>
-					{comments?.map((comment) => (
-					<AdminCommentTable key={comment.id} comment={comment} />
-				))}
+					<thead>
+						<tr>
+							<th>Course</th>
+							<th>User</th>
+							<th>Comment</th>
+						</tr>
+					</thead>
+					<tbody>{commentsList}</tbody>
 				</table>
-
 			</div>
 		</div>
 	);
