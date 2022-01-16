@@ -17,7 +17,7 @@ function ResourceDetail() {
 					<br />
 					<h3> List of Resources:</h3>
 					{resource.extra_items.map((item) => (
-						<p>{item.detail}</p>
+						<p key={item.id}>{item.detail}</p>
 					))}
 				</>
 			)}

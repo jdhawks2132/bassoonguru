@@ -6,7 +6,7 @@ function ResourceDashboard() {
 	const { data, error, isLoading, isFetching, isSuccess } = useExtrasQuery();
 	return (
 		<div>
-			<h2 className='page-title'>Lesson List</h2>
+			<h2 className='page-title'>Extra Resources</h2>
 			{isLoading && <h2>...Loading</h2>}
 			{isFetching && <h2>Fetching</h2>}
 			{error && <h2>Error</h2>}

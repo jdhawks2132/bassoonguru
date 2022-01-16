@@ -16,9 +16,7 @@ function Curriculum() {
 	const { data: user } = useCurrentUserQuery();
 
 	const handleVideo = (url) => {
-		console.log(currentVideo);
 		setCurrentVideo(url);
-		console.log(currentVideo);
 	};
 
 	return (

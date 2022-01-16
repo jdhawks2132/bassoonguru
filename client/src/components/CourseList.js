@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './CourseList.css';
 
 export default function CourseList({ courses }) {
-	const check = courses[0].extra_items === undefined;
+	const check = courses[0]?.extra_items === undefined;
 
 	return (
 		<div className='course-list'>
