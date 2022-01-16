@@ -1,5 +1,5 @@
 class Api::CoursesController < ApplicationController
-	before_action :set_course, only: [:show]
+	before_action :set_course, only: %i[show]
 
 	def index
 		render json: Course.all, status: :ok
@@ -7,7 +7,12 @@ class Api::CoursesController < ApplicationController
 
 	def show
 		render json: @course,
-		       include: %w[videos comments comments.responses],
+		       include: %w[
+				videos
+				comments
+				comments.responses
+				comments.user.username
+		       ],
 		       serializer: CourseWithDetailsSerializer
 	end
 

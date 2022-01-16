@@ -15,7 +15,7 @@ function CommentList({ comment, user }) {
 		<ul>
 			<li>
 				<div className='comment-author'>
-					<p>@{isUserComment ? user.username : 'user'} :</p>
+					<p>@{comment.user.username} :</p>
 				</div>
 				<div className='comment-content'>
 					<p>{comment.comment}</p>

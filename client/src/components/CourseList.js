@@ -5,7 +5,6 @@ import './CourseList.css';
 
 export default function CourseList({ courses }) {
 	const check = courses[0]?.extra_items === undefined;
-
 	return (
 		<div className='course-list'>
 			{check &&
