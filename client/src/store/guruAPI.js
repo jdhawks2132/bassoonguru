@@ -88,6 +88,10 @@ export const guruApi = createApi({
 			query: (id) => `/extras/${id}`,
 			providesTags: ['Resource'],
 		}),
+		users: builder.query({
+			query: () => '/users',
+			providesTags: ['User'],
+		}),
 	}),
 });
 
@@ -105,4 +109,5 @@ export const {
 	useDeleteCommentMutation,
 	useExtrasQuery,
 	useExtraQuery,
+	useUsersQuery,
 } = guruApi;

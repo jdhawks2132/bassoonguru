@@ -13,7 +13,8 @@ class Api::CoursesController < ApplicationController
 				comments.responses
 				comments.user.username
 		       ],
-		       serializer: CourseWithDetailsSerializer
+		       serializer: CourseWithDetailsSerializer,
+		       status: :ok
 	end
 
 	private

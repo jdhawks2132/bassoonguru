@@ -1,11 +1,11 @@
 .admin {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-areas:
-		'course   comment   comment'
-		'user   comment   comment';
+	grid-template-columns: 1fr;
+	justify-self: center;
 }
 
-.comment-table {
-	grid-area: comment;
+.admin-table {
+	width: 900px;
+	justify-self: center;
+	margin-bottom: 50px;
 }

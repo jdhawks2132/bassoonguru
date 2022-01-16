@@ -2,6 +2,12 @@ class Api::UsersController < ApplicationController
 	skip_before_action :authenticate_user, only: %i[create]
 	before_action :set_user, only: [:update]
 
+	def index
+		render json: User.all,
+		       each_serializer: UserWithoutDetailsSerializer,
+		       status: :ok
+	end
+
 	def show
 		if current_user
 			render json: current_user, status: :ok

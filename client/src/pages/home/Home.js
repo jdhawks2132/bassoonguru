@@ -1,5 +1,5 @@
 import './Home.css';
-import BssnGuru from '../../assets/BssnGuru.png';
+import Logo from '../../assets/BssnGuru.png';
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
 				<h1 className='hero-test'>
 					Helping Beginner Bassoonists find their Zen.
 				</h1>
-				<img src={BssnGuru} alt='logo' className='hero-logo' />
+				<img src={Logo} alt='logo' className='hero-logo' />
 			</div>
 			<div className='entry-btns'>
 				<Link to='/login'>
