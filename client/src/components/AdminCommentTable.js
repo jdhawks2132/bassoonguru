@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useDeleteCommentMutation } from '../store/guruAPI';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+import Button from '@mui/material/Button';
 
 function AdminCommentTable({ comment }) {
 	const [deleteComment] = useDeleteCommentMutation();
@@ -9,20 +12,30 @@ function AdminCommentTable({ comment }) {
 		await deleteComment(comment.id);
 	};
 	return (
-		<tr>
-			<td>{comment.course_id}</td>
-			<td>{comment.user_id}</td>
-			<td>{comment.comment}</td>
-			<td>
-				<button onClick={() => setIsUpdate(!isUpdate)}>Update</button>
-			</td>
-			<td>
-				<button>respond</button>
-			</td>
-			<td>
-				<button onClick={handleDelete}>delete</button>
-			</td>
-		</tr>
+		<TableRow>
+			<TableCell>{comment.course_id}</TableCell>
+			<TableCell>{comment.user_id}</TableCell>
+			<TableCell>{comment.comment}</TableCell>
+			<TableCell>
+				<Button
+					size='small'
+					variant='outlined'
+					onClick={() => setIsUpdate(!isUpdate)}
+				>
+					Update
+				</Button>
+			</TableCell>
+			<TableCell>
+				<Button size='small' variant='outlined'>
+					respond
+				</Button>
+			</TableCell>
+			<TableCell>
+				<Button size='small' variant='outlined' onClick={handleDelete}>
+					delete
+				</Button>
+			</TableCell>
+		</TableRow>
 	);
 }
 

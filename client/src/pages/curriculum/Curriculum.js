@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import ReactPlayer from 'react-player';
-import { useParams } from 'react-router-dom';
 import CommentForm from '../../components/CommentForm';
 import CommentList from '../../components/CommentList';
 import CurriculumCard from '../../components/CurriculumCard';
 import VideoList from '../../components/VideoList';
+import ReactPlayer from 'react-player';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { useCourseQuery, useCurrentUserQuery } from '../../store/guruAPI';
 
 import './Curriculum.css';

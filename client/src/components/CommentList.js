@@ -4,9 +4,11 @@ import './CommentList.css';
 
 function CommentList({ comment, user }) {
 	const [deleteComment] = useDeleteCommentMutation();
+
 	const handleDelete = async () => {
 		await deleteComment(comment.id);
 	};
+
 	const isUserComment = comment.user_id === user.id;
 
 	return (
