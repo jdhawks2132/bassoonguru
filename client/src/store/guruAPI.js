@@ -73,6 +73,14 @@ export const guruApi = createApi({
 			}),
 			invalidatesTags: ['Comment'],
 		}),
+		updateComment: builder.mutation({
+			query: ({ id, ...rest }) => ({
+				url: `/comments/${id}`,
+				method: 'PUT',
+				body: rest,
+			}),
+			invalidatesTags: ['Comment'],
+		}),
 		deleteComment: builder.mutation({
 			query: (id) => ({
 				url: `/comments/${id}`,
@@ -106,6 +114,7 @@ export const {
 	useDeleteEnrollmentMutation,
 	useCommentsQuery,
 	useAddCommentMutation,
+	useUpdateCommentMutation,
 	useDeleteCommentMutation,
 	useExtrasQuery,
 	useExtraQuery,

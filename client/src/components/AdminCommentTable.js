@@ -1,63 +1,102 @@
-import { useDeleteCommentMutation, useCommentsQuery } from '../store/guruAPI';
-import TableRow from '@mui/material/TableRow';
-import TableCell from '@mui/material/TableCell';
-import Button from '@mui/material/Button';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
+import AdminCommentReadOnly from './AdminCommentReadOnly';
+import AdminCommentInlineForm from './AdminCommentInlineForm';
+import {
+	useDeleteCommentMutation,
+	useCommentsQuery,
+	useUpdateCommentMutation,
+} from '../store/guruAPI';
+import { useState, Fragment } from 'react';
 
 function AdminCommentTable() {
 	const [deleteComment] = useDeleteCommentMutation();
 	const { data: comments } = useCommentsQuery();
+	const [updateComment] = useUpdateCommentMutation();
+
+	const [editContactId, setEditContactId] = useState(null);
+
+	const [updateFormData, setUpdateFormData] = useState({
+		id: '',
+		course_id: '',
+		user_id: '',
+		comment: '',
+	});
 
 	const handleDelete = async (id) => {
 		await deleteComment(id);
 	};
 
+	const handleUpdateClick = (e, comment) => {
+		e.preventDefault();
+		setEditContactId(comment.id);
+
+		const formValues = {
+			id: comment.id,
+			course_id: comment.course_id,
+			user_id: comment.user_id,
+			comment: comment.comment,
+		};
+
+		setUpdateFormData(formValues);
+	};
+
+	const handleUpdateFormChange = (e) => {
+		e.preventDefault();
+		const key = e.target.name;
+		const value = e.target.value;
+
+		const newFormData = { ...updateFormData };
+		newFormData[key] = value;
+
+		setUpdateFormData(newFormData);
+	};
+
+	const handleUpdateFormSubmit = async (e) => {
+		e.preventDefault();
+
+		await updateComment(updateFormData).then(setEditContactId(null));
+	};
+
+	const handleCancelClick = () => {
+		setEditContactId(null);
+	};
+	console.log(updateFormData);
 	// const commentsList = comments?.map((comment) => (
 	// 	<AdminCommentTable key={comment.id} comment={comment} />
 	// ));
 	return (
-		<TableContainer>
-			<Table>
-				<TableHead>
-					<TableRow>
-						<TableCell>Course</TableCell>
-						<TableCell>User</TableCell>
-						<TableCell>Comment</TableCell>
-					</TableRow>
-				</TableHead>
-				<TableBody>
-					{comments?.map((comment) => (
-						<TableRow key={comment.id}>
-							<TableCell>{comment.course_id}</TableCell>
-							<TableCell>{comment.user_id}</TableCell>
-							<TableCell>{comment.comment}</TableCell>
-							<TableCell>
-								<Button size='small' variant='outlined'>
-									Update
-								</Button>
-							</TableCell>
-							<TableCell>
-								<Button size='small' variant='outlined'>
-									respond
-								</Button>
-							</TableCell>
-							<TableCell>
-								<Button
-									size='small'
-									variant='outlined'
-									onClick={() => handleDelete(comment.id)}
-								>
-									delete
-								</Button>
-							</TableCell>
-						</TableRow>
-					))}
-				</TableBody>
-			</Table>
-		</TableContainer>
+		<div>
+			<form onSubmit={handleUpdateFormSubmit}>
+				<table>
+					<thead>
+						<tr>
+							<td>Course</td>
+							<td>User</td>
+							<td>Comment</td>
+							<td>Actions</td>
+						</tr>
+					</thead>
+					<tbody>
+						{comments?.map((comment) => (
+							<Fragment key={comment.id}>
+								{editContactId === comment.id ? (
+									<AdminCommentInlineForm
+										comment={updateFormData}
+										handleUpdateFormChange={handleUpdateFormChange}
+										handleCancelClick={handleCancelClick}
+									/>
+								) : (
+									<AdminCommentReadOnly
+										comment={comment}
+										handleDelete={handleDelete}
+										handleUpdateClick={handleUpdateClick}
+									/>
+								)}
+							</Fragment>
+						))}
+					</tbody>
+				</table>
+			</form>
+		</div>
 	);
 }
 
