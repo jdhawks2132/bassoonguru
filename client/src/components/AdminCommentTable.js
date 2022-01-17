@@ -59,12 +59,10 @@ function AdminCommentTable() {
 	const handleCancelClick = () => {
 		setEditContactId(null);
 	};
-	console.log(updateFormData);
-	// const commentsList = comments?.map((comment) => (
-	// 	<AdminCommentTable key={comment.id} comment={comment} />
-	// ));
+
 	return (
 		<div>
+			<h2>Comments</h2>
 			<form onSubmit={handleUpdateFormSubmit}>
 				<table>
 					<thead>

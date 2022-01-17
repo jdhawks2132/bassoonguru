@@ -36,8 +36,12 @@ function AdminCommentInlineForm({
 				></input>
 			</td>
 			<td>
-				<button type='submit'>Save</button>
-				<button onClick={handleCancelClick}>Cancel</button>
+				<button className='btn-mini-blue' type='submit'>
+					SAVE
+				</button>
+				<button className='btn-mini-pink' onClick={handleCancelClick}>
+					CANCEL
+				</button>
 			</td>
 		</tr>
 	);

@@ -1,5 +1,5 @@
-import AdminCourseTable from '../../components/AdminCourseTable';
 import AdminCommentTable from '../../components/AdminCommentTable';
+import AdminEnrollmentTable from '../../components/AdminEnrollmentTable';
 import AdminUserTable from '../../components/AdminUserTable';
 
 import './Admin.css';
@@ -14,7 +14,7 @@ function Admin() {
 				<AdminCommentTable />
 			</div>
 			<div className='admin-table'>
-				<AdminCourseTable />
+				<AdminEnrollmentTable />
 			</div>
 		</div>
 	);

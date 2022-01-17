@@ -8,25 +8,23 @@ function AdminCommentReadOnly({ comment, handleDelete, handleUpdateClick }) {
 			<td>{comment.comment}</td>
 			<td>
 				<button
-					size='small'
-					variant='outlined'
+					className='btn-mini-blue'
 					onClick={(e) => handleUpdateClick(e, comment)}
 				>
-					Update
+					UPDATE
 				</button>
 			</td>
-			<td>
+			{/* <td>
 				<button size='small' variant='outlined'>
 					respond
 				</button>
-			</td>
+			</td> */}
 			<td>
 				<button
-					size='small'
-					variant='outlined'
+					className='btn-mini-pink'
 					onClick={() => handleDelete(comment.id)}
 				>
-					delete
+					DELETE
 				</button>
 			</td>
 		</tr>

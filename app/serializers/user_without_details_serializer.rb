@@ -1,3 +1,3 @@
 class UserWithoutDetailsSerializer < ActiveModel::Serializer
-	attributes :id, :username, :admin
+	attributes :id, :username, :email, :admin
 end

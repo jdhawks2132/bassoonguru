@@ -42,6 +42,21 @@ export const guruApi = createApi({
 			}),
 			invalidatesTags: ['User'],
 		}),
+		updateUser: builder.mutation({
+			query: ({ id, ...rest }) => ({
+				url: `/users/${id}`,
+				method: 'PUT',
+				body: rest,
+			}),
+			invalidatesTags: ['User'],
+		}),
+		deleteUser: builder.mutation({
+			query: (id) => ({
+				url: `/users/${id}`,
+				method: 'DELETE',
+			}),
+			invalidatesTags: ['User', 'Comment', 'Course'],
+		}),
 		enrollments: builder.query({
 			query: () => '/enrollments',
 			providesTags: ['User', 'Course'],
@@ -110,6 +125,8 @@ export const {
 	useSignupMutation,
 	useLoginMutation,
 	useLogoutMutation,
+	useUpdateUserMutation,
+	useDeleteUserMutation,
 	useAddEnrollmentMutation,
 	useDeleteEnrollmentMutation,
 	useCommentsQuery,
@@ -119,4 +136,5 @@ export const {
 	useExtrasQuery,
 	useExtraQuery,
 	useUsersQuery,
+	useEnrollmentsQuery,
 } = guruApi;
