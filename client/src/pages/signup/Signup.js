@@ -12,7 +12,12 @@ export default function Signup() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		await signup({ username: userName, password: password, email: email });
+		await signup({
+			username: userName,
+			password: password,
+			email: email,
+			admin: false,
+		});
 	};
 
 	return (
