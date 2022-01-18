@@ -13,6 +13,10 @@ The purpose of this application was to bring together the skills and knowledge a
 ## Development Team
 - [Joshua Hawks](http://www.linkedin.com/in/joshuahawks1)
 
+## Purpose
+
+I wanted to develop an online learning application that, though outwardly branded for music/ the bassoon, could be adapted for any video based curriculum library.
+
 ## Project Planning
 
 - Frontend: 
