@@ -12,6 +12,7 @@
 	margin-bottom: 5px;
 	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
 	background: #fff;
+	overflow: auto;
 }
 .comment-author {
 	display: flex;
