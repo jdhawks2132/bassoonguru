@@ -56,7 +56,6 @@ function AdminUserTable() {
 		setEditUserId(null);
 	};
 
-	console.log(updateFormData);
 	return (
 		<div>
 			<h2>Users</h2>

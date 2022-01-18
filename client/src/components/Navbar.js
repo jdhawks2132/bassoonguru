@@ -10,7 +10,6 @@ export default function Navbar() {
 	const { data: currentUser } = useCurrentUserQuery();
 	const handleLogout = () => logout().then(() => window.location.reload());
 
-	console.log(currentUser);
 	return (
 		<nav className='navbar'>
 			<ul>
