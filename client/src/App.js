@@ -65,6 +65,10 @@ function App() {
 							{!currentUser && <Signup />}
 							{currentUser && <Redirect to='/lessons' />}
 						</Route>
+						<Route path='*'>
+							<Home />
+							{currentUser && <Redirect to='/lessons' />}
+						</Route>
 					</Switch>
 				</div>
 			</BrowserRouter>
