@@ -27,4 +27,14 @@ The purpose of this application was to bring together the skills and knowledge a
   - The curriculum dashboard contains a library of YouTube videos specific to that lesson.
   - User may leave chat messages in the curriculum dashboard for the admin and other students.
   - If a message belongs to the logged in user, the user may also delete their message.
+  - Logging out ends the session and returns the user to the login screen.
+
+- Backend: 
+  - Utilizes Ruby on Rails
+  - Follows RESTful routing conventions
+  - Allows for user authentication and authorization using sessions
+  - Namespaced api routes to avoid conflict with frontend routes
+
+- Deployment:
+  - Deployed as a monorepo on Heroku
   
