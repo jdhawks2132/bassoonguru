@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.97940659.css",
+    "main.js": "/static/js/main.6a45a42b.js",
+    "static/media/BssnGuruGradient.png": "/static/media/BssnGuruGradient.1a8fb8484423ec4df1ac.png",
+    "static/media/BssnGuru.png": "/static/media/BssnGuru.b4ba4cc31544c1b4b320.png",
+    "index.html": "/index.html",
+    "main.97940659.css.map": "/static/css/main.97940659.css.map",
+    "main.6a45a42b.js.map": "/static/js/main.6a45a42b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.97940659.css",
+    "static/js/main.6a45a42b.js"
+  ]
+}
