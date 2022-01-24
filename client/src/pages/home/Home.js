@@ -24,7 +24,7 @@ function Home() {
 					<button className='btn-prpl'>Signup</button>
 				</Link>
 			</div>
-			<h1 id='sample'>Sample Classes</h1>
+			<h1 id='sample'>Course List</h1>
 			<div className='course-demo'>{data && <CourseList courses={data} />}</div>
 			<Contact />
 		</div>

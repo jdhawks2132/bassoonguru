@@ -1,15 +1,16 @@
-import React from 'react';
-import emailjs from 'emailjs-com';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
+	const form = useRef();
 	const sendEmail = (e) => {
 		e.preventDefault();
 
 		emailjs
 			.sendForm(
-				'gmail',
-				'template_10ax1cl',
-				e.target,
+				'service_0dxvb46',
+				'template_bnzmv7j',
+				form.current,
 				'user_YO8RauGbkIFdUOknXzHZb'
 			)
 			.then(
@@ -24,7 +25,7 @@ function Contact() {
 	};
 	return (
 		<div>
-			<form onSubmit={sendEmail} className='auth-form'>
+			<form ref={form} onSubmit={sendEmail} className='auth-form'>
 				<h2>Contact Us:</h2>
 				<label>
 					<input required type='text' placeholder='name' name='name' />
