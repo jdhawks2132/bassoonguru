@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useCoursesQuery } from '../../store/guruAPI';
 import CourseList from '../../components/CourseList';
 import Contact from '../../components/Contact';
+import Footer from '../../components/Footer';
 
 function Home() {
 	const { data } = useCoursesQuery();
@@ -26,7 +27,12 @@ function Home() {
 			</div>
 			<h1 id='sample'>Course List</h1>
 			<div className='course-demo'>{data && <CourseList courses={data} />}</div>
-			<Contact />
+			<div className='contact'>
+				<Contact />
+			</div>
+			<div className='footer'>
+				<Footer />
+			</div>
 		</div>
 	);
 }

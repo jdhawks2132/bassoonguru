@@ -33,3 +33,16 @@
 	color: #707070;
 	margin-top: 20px;
 }
+
+.home .contact h2 {
+	color: #707070;
+}
+
+.footer {
+	height: 100px;
+	color: #707070;
+}
+
+.footer img {
+	width: 100px;
+}
