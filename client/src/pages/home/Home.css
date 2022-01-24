@@ -3,7 +3,7 @@
 	text-align: center;
 	grid-template-columns: 1fr;
 	width: 100%;
-	height: 100%;
+	height: 600px;
 }
 
 .home h1 {
@@ -27,4 +27,9 @@
 }
 .entry-btns .btn {
 	margin: 10 0 auto;
+}
+
+#sample {
+	color: #707070;
+	margin-top: 20px;
 }

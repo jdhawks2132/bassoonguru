@@ -1,8 +1,13 @@
 import './Home.css';
 import Logo from '../../assets/BssnGuru.png';
 import { Link } from 'react-router-dom';
+import { useCoursesQuery } from '../../store/guruAPI';
+import CourseList from '../../components/CourseList';
+import Contact from '../../components/Contact';
 
 function Home() {
+	const { data } = useCoursesQuery();
+
 	return (
 		<div className='home'>
 			<div className='bg'>
@@ -19,6 +24,9 @@ function Home() {
 					<button className='btn-prpl'>Signup</button>
 				</Link>
 			</div>
+			<h1 id='sample'>Sample Classes</h1>
+			<div className='course-demo'>{data && <CourseList courses={data} />}</div>
+			<Contact />
 		</div>
 	);
 }
