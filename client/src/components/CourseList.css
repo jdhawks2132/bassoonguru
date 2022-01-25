@@ -18,18 +18,17 @@
 .course-list h2 {
 	color: white;
 	padding: 30px;
+	font-size: 2vw;
 	background-color: #324bd3;
 	border-radius: 10px 10px 0 0;
 }
 
 .course-list h3 {
 	color: var(--text-color);
-	padding: 10px;
+	font-size: 1.25vw;
+	padding: 12px;
 }
-.course-list p {
-	color: var(--text-color);
-	font-size: 0.9em;
-}
+
 /* .course-list .assigned-to {
 	margin-top: 20px;
 	padding-top: 10px;
