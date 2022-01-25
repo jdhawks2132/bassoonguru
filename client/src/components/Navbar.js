@@ -44,6 +44,9 @@ export default function Navbar() {
 							<Link to='/extras'>Resources</Link>
 						</li>
 						<li>
+							<Link to='/bassclef'>NoteNamer</Link>
+						</li>
+						<li>
 							<button className='btn' onClick={handleLogout}>
 								Logout
 							</button>

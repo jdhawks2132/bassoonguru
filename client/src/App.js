@@ -15,6 +15,7 @@ import Home from './pages/home/Home';
 import Admin from './pages/admin/Admin';
 import ResourceDashboard from './pages/dashboard/ResourceDashboard';
 import Resource from './pages/detail/Resource';
+import BassClef from './pages/bassclef/BassClef';
 
 function App() {
 	const { data: currentUser } = useCurrentUserQuery();
@@ -39,6 +40,10 @@ function App() {
 						</Route>
 						<Route path='/extras'>
 							{currentUser && <ResourceDashboard />}
+							{!currentUser && <Redirect to='/login' />}
+						</Route>
+						<Route path='/bassclef'>
+							{currentUser && <BassClef />}
 							{!currentUser && <Redirect to='/login' />}
 						</Route>
 						<Route exact path='/resources/:id'>
