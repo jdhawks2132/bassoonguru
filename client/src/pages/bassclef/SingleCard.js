@@ -1,7 +1,26 @@
 import React from 'react';
 
-function SingleCard() {
-	return <div></div>;
+import './BassClef.css';
+
+function SingleCard({ card, handleChoice, flipped, disabled }) {
+	const handleClick = () => {
+		if (!disabled) {
+			handleChoice(card);
+		}
+	};
+	return (
+		<div className='card'>
+			<div className={flipped ? 'flipped' : ''}>
+				<img className='front' src={card.src} alt='card front' />
+				<img
+					className='back'
+					src='/img/back.png'
+					alt='cover'
+					onClick={handleClick}
+				/>
+			</div>
+		</div>
+	);
 }
 
 export default SingleCard;
