@@ -7,9 +7,10 @@ function BassClef() {
 	const [cards, setCards] = useState(null);
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
-
 	const [turns, setTurns] = useState(0);
 	const [disabled, setDisabled] = useState(false);
+	const [error, setError] = useState(null);
+	const [answer, setAnswer] = useState(null);
 
 	const cardImages = [
 		{ id: 1, name: 'G', src: '/img/lowG.png', matched: false },
@@ -30,16 +31,31 @@ function BassClef() {
 		setChoiceTwo(null);
 		setCards(shuffledCards);
 		setTurns(0);
+		setAnswer(null);
 	};
 
 	useEffect(() => {
 		shuffleCards();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const handleChoice = (card) => {
 		setChoiceOne(card);
+		setAnswer(null);
+		setError(false);
 	};
-	console.log(cards, choiceOne, choiceTwo);
+
+	const handleChoiceTwo = (e) => {
+		if (choiceOne) {
+			setChoiceTwo(e.target.value);
+			setAnswer(null);
+		} else {
+			setAnswer(null);
+			setError(true);
+			throw new Error('Click on a Card First');
+		}
+	};
+
 
 	const cardList = cards?.map((card) => (
 		<SingleCard
@@ -58,6 +74,7 @@ function BassClef() {
 				setCards((prevCards) => {
 					return prevCards.map((card) => {
 						if (card.src === choiceOne.src) {
+							setAnswer(true);
 							return { ...card, matched: true };
 						} else {
 							return card;
@@ -66,7 +83,8 @@ function BassClef() {
 				});
 				resetTurn();
 			} else {
-				setTimeout(() => resetTurn(), 1000);
+				setAnswer(false);
+				setTimeout(() => resetTurn(), 500);
 			}
 		}
 	}, [choiceOne, choiceTwo]);
@@ -87,58 +105,31 @@ function BassClef() {
 				</button>
 				<p>Number of Turns: {turns}</p>
 			</div>
-
 			<div className='game-board'>{cardList}</div>
 			<div>
-				<button
-					className='game-btn'
-					onClick={(e) => setChoiceTwo(e.target.value)}
-					value='A'
-				>
+				{answer !== null && <>{answer ? <span>✅</span> : <span>❌ </span>}</>}
+				<button className='game-btn' onClick={handleChoiceTwo} value='A'>
 					A
 				</button>
-				<button
-					className='game-btn'
-					onClick={(e) => setChoiceTwo(e.target.value)}
-					value='B'
-				>
+				<button className='game-btn' onClick={handleChoiceTwo} value='B'>
 					B
 				</button>
-				<button
-					className='game-btn'
-					onClick={(e) => setChoiceTwo(e.target.value)}
-					value='C'
-				>
+				<button className='game-btn' onClick={handleChoiceTwo} value='C'>
 					C
 				</button>
-				<button
-					className='game-btn'
-					onClick={(e) => setChoiceTwo(e.target.value)}
-					value='D'
-				>
+				<button className='game-btn' onClick={handleChoiceTwo} value='D'>
 					D
 				</button>
-				<button
-					className='game-btn'
-					onClick={(e) => setChoiceTwo(e.target.value)}
-					value='E'
-				>
+				<button className='game-btn' onClick={handleChoiceTwo} value='E'>
 					E
 				</button>
-				<button
-					className='game-btn'
-					onClick={(e) => setChoiceTwo(e.target.value)}
-					value='F'
-				>
+				<button className='game-btn' onClick={handleChoiceTwo} value='F'>
 					F
 				</button>
-				<button
-					className='game-btn'
-					onClick={(e) => setChoiceTwo(e.target.value)}
-					value='G'
-				>
+				<button className='game-btn' onClick={handleChoiceTwo} value='G'>
 					G
 				</button>
+				{error && <p>choose a card first!</p>}
 			</div>
 		</div>
 	);
