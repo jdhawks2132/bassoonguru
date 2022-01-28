@@ -8,7 +8,7 @@ class Api::CoursesController < ApplicationController
 
 	def show
 		render json: @course,
-		       include: %w[
+		       include: %w[ 
 				videos
 				comments
 				comments.responses
