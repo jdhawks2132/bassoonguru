@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 		resources :users, only: %i[index update destroy]
 		resources :enrollments, except: [:update]
 		resources :comments
-		resources :videos, only: %i[index show]
-		resources :courses, only: %i[index show]
+		resources :videos, only: %i[index show create]
+		resources :courses, only: %i[index show create]
 		resources :extra_items, only: %i[index show]
 		resources :extras, only: %i[index show]
 		post '/signup', to: 'users#create'
