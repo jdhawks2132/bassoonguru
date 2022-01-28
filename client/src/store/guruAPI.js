@@ -15,6 +15,14 @@ export const guruApi = createApi({
 			query: (id) => `/courses/${id}`,
 			providesTags: ['Course', 'Comment'],
 		}),
+		addCourse: builder.mutation({
+			query: (course) => ({
+				url: '/courses',
+				method: 'POST',
+				body: course,
+			}),
+			invalidatesTags: ['Course'],
+		}),
 		currentUser: builder.query({
 			query: () => '/me',
 			providesTags: ['User'],
@@ -115,12 +123,21 @@ export const guruApi = createApi({
 			query: () => '/users',
 			providesTags: ['User'],
 		}),
+		addVideo: builder.mutation({
+			query: (video) => ({
+				url: '/videos',
+				method: 'POST',
+				body: video,
+			}),
+			invalidatesTags: ['Course'],
+		}),
 	}),
 });
 
 export const {
 	useCoursesQuery,
 	useCourseQuery,
+	useAddCourseMutation,
 	useCurrentUserQuery,
 	useSignupMutation,
 	useLoginMutation,
@@ -137,4 +154,5 @@ export const {
 	useExtraQuery,
 	useUsersQuery,
 	useEnrollmentsQuery,
+	useAddVideoMutation,
 } = guruApi;

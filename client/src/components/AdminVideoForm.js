@@ -29,8 +29,8 @@ function AdminVideoForm() {
 			<label>
 				<input
 					required
-					placeholder='details'
-					type='integer'
+					placeholder='course id'
+					type='number'
 					onChange={(e) => setCourseId(e.target.value)}
 					value={courseId}
 				/>

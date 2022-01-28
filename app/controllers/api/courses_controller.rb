@@ -18,9 +18,18 @@ class Api::CoursesController < ApplicationController
 		       status: :ok
 	end
 
+	def create
+		course = Course.create!(course_params)
+		render json: course, status: :created
+	end
+
 	private
 
 	def set_course
 		@course = Course.find(params[:id])
+	end
+
+	def course_params
+		params.permit(:name, :desc, :details)
 	end
 end
