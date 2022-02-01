@@ -1,6 +1,6 @@
 class Api::CoursesController < ApplicationController
 	skip_before_action :authenticate_user, only: %i[index]
-	before_action :set_course, only: %i[show]
+	before_action :set_course, only: %i[show destroy]
 
 	def index
 		render json: Course.all, status: :ok
@@ -21,6 +21,11 @@ class Api::CoursesController < ApplicationController
 	def create
 		course = Course.create!(course_params)
 		render json: course, status: :created
+	end
+
+	def destroy
+		@course.destroy
+		render json: {}, status: :ok
 	end
 
 	private

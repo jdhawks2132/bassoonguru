@@ -1,5 +1,5 @@
 class Api::VideosController < ApplicationController
-	before_action :set_video, only: %i[show]
+	before_action :set_video, only: %i[show destroy]
 
 	def index
 		render json: Video.all, status: :ok

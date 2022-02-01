@@ -26,7 +26,9 @@ function Home() {
 				</Link>
 			</div>
 			<h1 id='sample'>Course List</h1>
-			<div className='course-demo'>{data && <CourseList courses={data} />}</div>
+			<div className='course-demo'>
+				{data && <CourseList courses={data.slice(0, 6)} />}
+			</div>
 			<div className='contact'>
 				<Contact />
 			</div>
